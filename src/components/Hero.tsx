@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Terminal, Download, ArrowRight, Sparkles, CheckCircle2, HardDrive, Disc, Activity } from 'lucide-react';
+import { Terminal, Download, ArrowRight, Sparkles, CheckCircle2, HardDrive, Disc, Activity, MessageCircle } from 'lucide-react';
+import { SYSTEM_INFO } from '../data/portfolioData';
 import { playTactileClick, playTerminalKey } from '../utils/sound';
 
 interface HeroProps {
@@ -111,6 +112,19 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenContact }) => {
               <Download className="w-4 h-4" />
               <span>[DOWNLOAD CV]</span>
             </button>
+
+            <a
+              id="hero-whatsapp-btn"
+              href={SYSTEM_INFO.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => playTactileClick()}
+              className="retro-btn bg-[#25d366] text-[#0b3318] border-2 border-[#18362b] px-5 py-3 font-jetbrains text-xs sm:text-sm font-bold flex items-center gap-2 hover:bg-[#20ba5a] transition-colors phosphor-glow"
+              title="Direct chat with Balakrishna on WhatsApp"
+            >
+              <MessageCircle className="w-4 h-4 fill-[#0b3318]" />
+              <span>[WHATSAPP CHAT]</span>
+            </a>
           </div>
 
           {/* Live Availability Badge */}

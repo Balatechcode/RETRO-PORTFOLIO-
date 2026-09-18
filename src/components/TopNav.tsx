@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Terminal, Clock, Volume2, VolumeX, Menu, X, Download, Send } from 'lucide-react';
+import { Terminal, Clock, Volume2, VolumeX, Menu, X, Download, Send, MessageCircle } from 'lucide-react';
+import { SYSTEM_INFO } from '../data/portfolioData';
 import { playTactileClick, toggleAudioMute, getAudioMutedState } from '../utils/sound';
 
 interface TopNavProps {
@@ -111,6 +112,20 @@ export const TopNav: React.FC<TopNavProps> = ({ onOpenResume, onOpenContact }) =
             <span>CV.PDF</span>
           </button>
 
+          {/* WhatsApp Direct Action */}
+          <a
+            id="top-wa-btn"
+            href={SYSTEM_INFO.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => playTactileClick()}
+            className="hidden md:flex retro-btn bg-[#25d366] text-[#0b3318] font-jetbrains text-xs font-bold px-2.5 py-1 items-center gap-1 border border-[#18362b] hover:bg-[#20ba5a] transition-colors"
+            title="Chat directly on WhatsApp"
+          >
+            <MessageCircle className="w-3.5 h-3.5 fill-[#0b3318]" />
+            <span>WA.EXE</span>
+          </a>
+
           {/* Contact CTA */}
           <button
             id="top-contact-btn"
@@ -158,29 +173,45 @@ export const TopNav: React.FC<TopNavProps> = ({ onOpenResume, onOpenContact }) =
             ))}
           </div>
 
-          <div className="pt-2 flex justify-between items-center gap-2 font-jetbrains text-xs border-t border-[#d8c2a8]">
-            <button
+          <div className="pt-2 flex flex-col gap-2 font-jetbrains text-xs border-t border-[#d8c2a8]">
+            <a
+              href={SYSTEM_INFO.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => {
                 playTactileClick();
                 setMobileMenuOpen(false);
-                onOpenResume();
               }}
-              className="retro-btn bg-[#e7e965] text-[#18362b] font-bold py-1.5 px-3 flex-1 flex justify-center items-center gap-1.5"
+              className="retro-btn bg-[#25d366] text-[#0b3318] font-bold py-2 px-3 flex justify-center items-center gap-2 border border-[#18362b]"
             >
-              <Download className="w-3.5 h-3.5" />
-              <span>DOWNLOAD RESUME</span>
-            </button>
-            <button
-              onClick={() => {
-                playTactileClick();
-                setMobileMenuOpen(false);
-                onOpenContact();
-              }}
-              className="retro-btn bg-[#2f4d41] text-[#fff8f4] font-bold py-1.5 px-3 flex-1 flex justify-center items-center gap-1.5"
-            >
-              <Send className="w-3.5 h-3.5 text-[#e7e965]" />
-              <span>SEND DISPATCH</span>
-            </button>
+              <MessageCircle className="w-4 h-4 fill-[#0b3318]" />
+              <span>CHAT ON WHATSAPP (+91 91040 28419)</span>
+            </a>
+
+            <div className="flex justify-between items-center gap-2">
+              <button
+                onClick={() => {
+                  playTactileClick();
+                  setMobileMenuOpen(false);
+                  onOpenResume();
+                }}
+                className="retro-btn bg-[#e7e965] text-[#18362b] font-bold py-1.5 px-3 flex-1 flex justify-center items-center gap-1.5"
+              >
+                <Download className="w-3.5 h-3.5" />
+                <span>RESUME</span>
+              </button>
+              <button
+                onClick={() => {
+                  playTactileClick();
+                  setMobileMenuOpen(false);
+                  onOpenContact();
+                }}
+                className="retro-btn bg-[#2f4d41] text-[#fff8f4] font-bold py-1.5 px-3 flex-1 flex justify-center items-center gap-1.5"
+              >
+                <Send className="w-3.5 h-3.5 text-[#e7e965]" />
+                <span>DISPATCH</span>
+              </button>
+            </div>
           </div>
         </div>
       )}

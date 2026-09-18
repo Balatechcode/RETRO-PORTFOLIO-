@@ -103,6 +103,32 @@ export function playSuccessChime() {
   }
 }
 
+export function playAlertChime() {
+  if (isAudioMuted) return;
+  try {
+    const ctx = getAudioContext();
+    if (!ctx) return;
+    const notes = [659.25, 880]; // E5 to A5 classic dual-tone notification
+    notes.forEach((freq, index) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(freq, ctx.currentTime + index * 0.1);
+
+      gain.gain.setValueAtTime(0.07, ctx.currentTime + index * 0.1);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + index * 0.1 + 0.14);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start(ctx.currentTime + index * 0.1);
+      osc.stop(ctx.currentTime + index * 0.1 + 0.14);
+    });
+  } catch {
+    // Graceful fallback
+  }
+}
+
 export function playBootBeep() {
   if (isAudioMuted) return;
   try {

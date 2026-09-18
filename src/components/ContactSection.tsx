@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import confetti from 'canvas-confetti';
-import { Send, Terminal, MapPin, Mail, Clock, CheckCircle, AlertCircle } from 'lucide-react';
+import { Send, Terminal, MapPin, Mail, Clock, CheckCircle, AlertCircle, MessageCircle } from 'lucide-react';
 import { SYSTEM_INFO } from '../data/portfolioData';
 import { ContactFormData, ValidationErrors } from '../types';
 import { playSuccessChime, playTactileClick, playTerminalKey } from '../utils/sound';
@@ -326,10 +326,33 @@ export const ContactSection: React.FC = () => {
               </p>
 
               <p className="flex items-center gap-2 text-[#414845]">
+                <MessageCircle className="w-4 h-4 text-[#25d366]" />
+                <a
+                  href={SYSTEM_INFO.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold text-[#18362b] hover:underline"
+                >
+                  WhatsApp: {SYSTEM_INFO.whatsappNumber}
+                </a>
+              </p>
+
+              <p className="flex items-center gap-2 text-[#414845]">
                 <Clock className="w-4 h-4 text-[#2f4d41]" />
                 <span>Timezone: {SYSTEM_INFO.timezone}</span>
               </p>
             </div>
+
+            <a
+              href={SYSTEM_INFO.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => playTactileClick()}
+              className="mt-3.5 w-full retro-btn bg-[#25d366] text-[#0b3318] py-2 px-3 font-jetbrains text-xs font-bold flex items-center justify-center gap-2 border border-[#18362b] hover:bg-[#20ba5a] transition-colors shadow-xs"
+            >
+              <MessageCircle className="w-4 h-4 fill-[#0b3318]" />
+              <span>[OPEN DIRECT WHATSAPP CHAT]</span>
+            </a>
           </div>
 
           {/* Booking Capacity tags */}

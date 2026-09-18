@@ -22,6 +22,8 @@ import { ContactSection } from './components/ContactSection';
 import { BottomTaskbar } from './components/BottomTaskbar';
 import { ProjectModal } from './components/ProjectModal';
 import { ResumeModal } from './components/ResumeModal';
+import { WhatsAppButton } from './components/WhatsAppButton';
+import { ExitIntentModal } from './components/ExitIntentModal';
 import { Project } from './types';
 import { playTactileClick } from './utils/sound';
 
@@ -110,8 +112,17 @@ export default function App() {
         <ContactSection />
       </main>
 
-      {/* Bottom Taskbar & Start Menu */}
+      {/* Persistent Bottom Taskbar & Start Menu */}
       <BottomTaskbar
+        onOpenResume={handleOpenResume}
+        onOpenContact={handleOpenContact}
+      />
+
+      {/* Floating Tactical WhatsApp Launcher */}
+      <WhatsAppButton onOpenContact={handleOpenContact} />
+
+      {/* Before-Leave Alert Greeting Intercept Modal */}
+      <ExitIntentModal
         onOpenResume={handleOpenResume}
         onOpenContact={handleOpenContact}
       />

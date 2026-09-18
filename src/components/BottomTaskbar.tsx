@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Terminal, Download, Send, User, Code, Layers, History, Settings, Volume2, VolumeX } from 'lucide-react';
+import { Terminal, Download, Send, User, Code, Layers, History, Settings, Volume2, VolumeX, MessageCircle, AlertTriangle } from 'lucide-react';
+import { SYSTEM_INFO } from '../data/portfolioData';
 import { playTactileClick, toggleAudioMute, getAudioMutedState } from '../utils/sound';
 
 interface BottomTaskbarProps {
@@ -70,6 +71,20 @@ export const BottomTaskbar: React.FC<BottomTaskbarProps> = ({
               })}
 
               <div className="pt-2 border-t border-[#c1c8c3] space-y-1">
+                <a
+                  href={SYSTEM_INFO.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => {
+                    playTactileClick();
+                    setStartMenuOpen(false);
+                  }}
+                  className="w-full text-left flex items-center gap-2 p-1.5 bg-[#25d366] text-[#0b3318] hover:bg-[#20ba5a] font-bold"
+                >
+                  <MessageCircle className="w-3.5 h-3.5 fill-[#0b3318]" />
+                  <span>WHATSAPP.EXE (DIRECT)</span>
+                </a>
+
                 <button
                   onClick={() => {
                     playTactileClick();
@@ -80,6 +95,18 @@ export const BottomTaskbar: React.FC<BottomTaskbarProps> = ({
                 >
                   <Download className="w-3.5 h-3.5" />
                   <span>DOWNLOAD CV.PDF</span>
+                </button>
+
+                <button
+                  onClick={() => {
+                    playTactileClick();
+                    setStartMenuOpen(false);
+                    window.dispatchEvent(new CustomEvent('open-exit-alert'));
+                  }}
+                  className="w-full text-left flex items-center gap-2 p-1.5 text-[#251909] hover:bg-[#2f4d41] hover:text-[#e7e965] font-bold text-[11px]"
+                >
+                  <AlertTriangle className="w-3.5 h-3.5 text-[#616200]" />
+                  <span>EXIT GREETING ALERT</span>
                 </button>
 
                 <button
