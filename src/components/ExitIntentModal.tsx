@@ -124,7 +124,7 @@ export const ExitIntentModal: React.FC<ExitIntentModalProps> = ({
           <div className="space-y-2.5">
             {/* 1. WhatsApp Action (Primary) */}
             <a
-              href="https://wa.me/919104028419?text=Hi%20Balakrishna%2C%20I%20saw%20your%20portfolio%20and%20wanted%20to%20say%20hello%20before%20leaving!"
+              href="https://wa.me/918154954408?text=Hi%20Balakrishna%2C%20I%20saw%20your%20portfolio%20and%20wanted%20to%20say%20hello%20before%20leaving!"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
@@ -145,7 +145,7 @@ export const ExitIntentModal: React.FC<ExitIntentModalProps> = ({
                     </span>
                   </div>
                   <p className="font-sans-body text-xs text-[#0f4420]">
-                    Direct connection to +91 91040 28419 • Response &lt; 15 mins
+                    Direct connection to {SYSTEM_INFO.whatsappNumber} • Response &lt; 15 mins
                   </p>
                 </div>
               </div>

@@ -185,7 +185,7 @@ export const TopNav: React.FC<TopNavProps> = ({ onOpenResume, onOpenContact }) =
               className="retro-btn bg-[#25d366] text-[#0b3318] font-bold py-2 px-3 flex justify-center items-center gap-2 border border-[#18362b]"
             >
               <MessageCircle className="w-4 h-4 fill-[#0b3318]" />
-              <span>CHAT ON WHATSAPP (+91 91040 28419)</span>
+              <span>CHAT ON WHATSAPP ({SYSTEM_INFO.whatsappNumber})</span>
             </a>
 
             <div className="flex justify-between items-center gap-2">

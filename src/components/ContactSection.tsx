@@ -10,7 +10,7 @@ export const ContactSection: React.FC = () => {
     name: '',
     email: '',
     projectType: 'Full Stack Web App',
-    budget: '$1,500 — $3,500',
+    budget: '₹25,000 — ₹75,000',
     message: '',
   });
 
@@ -78,7 +78,7 @@ export const ContactSection: React.FC = () => {
       name: '',
       email: '',
       projectType: 'Full Stack Web App',
-      budget: '$1,500 — $3,500',
+      budget: '₹25,000 — ₹75,000',
       message: '',
     });
     setErrors({});
@@ -236,11 +236,11 @@ export const ContactSection: React.FC = () => {
                     }}
                     className="w-full retro-sunken bg-[#fff1e4] px-3 py-2 font-jetbrains text-xs text-[#251909] focus:outline-none focus:ring-1 focus:ring-[#18362b] border border-[#c1c8c3]"
                   >
-                    <option>$500 — $1,500</option>
-                    <option>$1,500 — $3,500</option>
-                    <option>$3,500 — $10,000+</option>
-                    <option>Monthly Marketing Retainer</option>
-                    <option>Hourly Consultation</option>
+                    <option>₹15,000 — ₹30,000</option>
+                    <option>₹30,000 — ₹75,000</option>
+                    <option>₹75,000 — ₹2,00,000+</option>
+                    <option>Monthly Marketing Retainer (₹)</option>
+                    <option>Hourly / Milestone Basis</option>
                   </select>
                 </div>
               </div>

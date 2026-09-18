@@ -6,7 +6,7 @@ export const MarketingLab: React.FC = () => {
   // Interactive Funnel / ROI Estimator State
   const [traffic, setTraffic] = useState<number>(5000);
   const [conversionRate, setConversionRate] = useState<number>(3.5);
-  const [avgOrderValue, setAvgOrderValue] = useState<number>(85);
+  const [avgOrderValue, setAvgOrderValue] = useState<number>(2500);
 
   const estimatedConversions = Math.round((traffic * conversionRate) / 100);
   const estimatedRevenue = Math.round(estimatedConversions * avgOrderValue);
@@ -173,13 +173,13 @@ export const MarketingLab: React.FC = () => {
           <div className="space-y-1">
             <div className="flex justify-between font-jetbrains text-xs">
               <span className="font-bold text-[#18362b]">Avg Value per Conversion:</span>
-              <span className="text-[#616200] font-bold">${avgOrderValue}</span>
+              <span className="text-[#616200] font-bold">₹{avgOrderValue.toLocaleString('en-IN')}</span>
             </div>
             <input
               type="range"
-              min="10"
-              max="500"
-              step="5"
+              min="500"
+              max="25000"
+              step="250"
               value={avgOrderValue}
               onChange={(e) => {
                 playTerminalKey();
@@ -208,7 +208,7 @@ export const MarketingLab: React.FC = () => {
               ESTIMATED MONTHLY PIPELINE REVENUE
             </span>
             <span className="font-space text-2xl font-bold text-[#616200]">
-              ${estimatedRevenue.toLocaleString()}
+              ₹{estimatedRevenue.toLocaleString('en-IN')}
             </span>
           </div>
 

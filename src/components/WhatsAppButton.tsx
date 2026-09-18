@@ -35,7 +35,7 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = () => {
   const handleLaunchWhatsApp = (textToTransmit?: string) => {
     playTactileClick();
     const message = encodeURIComponent(textToTransmit || customMsg);
-    const url = `https://wa.me/919104028419?text=${message}`;
+    const url = `https://wa.me/918154954408?text=${message}`;
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
