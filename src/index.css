@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #eed7bc;
+    color: #251909;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: "Space Mono", monospace;
+  }
+
+  code, pre, .font-mono-code {
+    font-family: "JetBrains Mono", monospace;
+  }
+}
+
+.font-space {
+  font-family: "Space Mono", monospace;
+}
+
+.font-jetbrains {
+  font-family: "JetBrains Mono", monospace;
+}
+
+.font-sans-body {
+  font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.font-handwriting {
+  font-family: "Caveat", cursive;
+}
+
+/* CRT Scanlines Overlay */
+.crt-scanlines {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(27, 41, 36, 0.035) 3px
+  );
+  pointer-events: none;
+}
+
+/* Tactile 80s/90s PC ABS Plastic Dot Matrix Floor */
+.dot-matrix-canvas {
+  background-color: #eed7bc;
+  background-image: radial-gradient(#2f4d41 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* 135-degree physical bevel light engine */
+.retro-raised {
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #c1c8c3;
+  border-bottom: 2px solid #727974;
+  box-shadow: 2px 2px 0px rgba(24, 54, 43, 0.18);
+}
+
+.retro-raised-subtle {
+  border-top: 1.5px solid #ffffff;
+  border-left: 1.5px solid #ffffff;
+  border-right: 1.5px solid #c1c8c3;
+  border-bottom: 1.5px solid #828a85;
+  box-shadow: 1px 1px 0px rgba(24, 54, 43, 0.12);
+}
+
+.retro-sunken {
+  border-top: 2px solid #727974;
+  border-left: 2px solid #727974;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  box-shadow: inset 1px 1px 3px rgba(24, 54, 43, 0.22);
+}
+
+.retro-sunken-dark {
+  border-top: 2px solid #101e1a;
+  border-left: 2px solid #101e1a;
+  border-right: 1px solid #3c4a44;
+  border-bottom: 1px solid #3c4a44;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.retro-btn {
+  border-top: 1.5px solid #ffffff;
+  border-left: 1.5px solid #ffffff;
+  border-right: 2px solid #18362b;
+  border-bottom: 2px solid #18362b;
+  transition: all 0.08s ease-in-out;
+  cursor: pointer;
+}
+
+.retro-btn:active {
+  border-top: 2px solid #18362b;
+  border-left: 2px solid #18362b;
+  border-right: 1.5px solid #ffffff;
+  border-bottom: 1.5px solid #ffffff;
+  transform: translate(1px, 1px);
+}
+
+.retro-tab-active {
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #727974;
+  border-bottom: none;
+}
+
+.phosphor-glow:hover {
+  box-shadow: 0 0 14px rgba(199, 201, 73, 0.65);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 0.9s infinite;
+}
+
